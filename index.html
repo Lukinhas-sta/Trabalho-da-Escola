@@ -1,57 +1,115 @@
-<html lang="pt-br">
-  <head>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05070c" />
+  <meta name="description" content="Projeto escolar de catálogo de filmes e séries, modernizado e preservado como parte da minha evolução no desenvolvimento web." />
+  <title>LUKINHAS Play | Projeto Escolar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#inicio" aria-label="LUKINHAS Play - início">
+      <span>L</span> LUKINHAS <strong>PLAY</strong>
+    </a>
+    <nav aria-label="Navegação principal">
+      <a href="#inicio">Início</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+  </header>
 
-    <title>LUKINHAS</title>
-  </head>
-
-  <body>
-    <header>LUKINHAS</header>
-
-    <section class="chamada">
-      <div class="chamada-text">
-        <h1>ATRAVÉS DO ARANHAVERSO</h1>
-        <p>#homem-aranha</p>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <div class="kicker">Destaque da semana</div>
+        <h1>ATRAVÉS DO<br /><span>ARANHAVERSO</span></h1>
+        <p class="hero-description">Uma seleção inspirada em filmes e séries que marcaram a cultura pop. Um projeto escolar simples que ganhou uma nova apresentação.</p>
+        <div class="hero-tags" aria-label="Categorias">
+          <span>Animação</span><span>Aventura</span><span>Super-heróis</span>
+        </div>
+        <a class="watch-btn" href="#player">▶ Assistir trailer</a>
       </div>
 
+      <div class="player-shell" id="player">
+        <div class="player-glow" aria-hidden="true"></div>
+        <div class="ratio">
+          <iframe
+            id="featuredPlayer"
+            src="https://www.youtube.com/embed/gt_fAE1Eg2Q?rel=0"
+            title="Trailer em destaque"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="now-playing">
+          <span class="pulse"></span>
+          <div>
+            <small>REPRODUZINDO AGORA</small>
+            <strong id="nowPlayingTitle">Através do Aranhaverso</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalogo">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">Minha seleção</span>
+          <h2>Filmes e séries</h2>
+        </div>
+        <span class="hint">Toque em um card para trocar o trailer</span>
+      </div>
+
+      <div class="cards" id="movieGrid">
+        <button class="movie-card" type="button" data-video="2ono3WoPKDE" data-title="Seleção 01" aria-label="Reproduzir Seleção 01">
+          <img src="https://img.youtube.com/vi/2ono3WoPKDE/hqdefault.jpg" alt="Capa da Seleção 01" loading="lazy" />
+          <span class="card-overlay"><strong>Seleção 01</strong><small>Reproduzir trailer</small></span>
+          <span class="play-icon">▶</span>
+        </button>
+        <button class="movie-card" type="button" data-video="Wnw8ooCpt2E" data-title="Seleção 02" aria-label="Reproduzir Seleção 02">
+          <img src="https://img.youtube.com/vi/Wnw8ooCpt2E/hqdefault.jpg" alt="Capa da Seleção 02" loading="lazy" />
+          <span class="card-overlay"><strong>Seleção 02</strong><small>Reproduzir trailer</small></span>
+          <span class="play-icon">▶</span>
+        </button>
+        <button class="movie-card" type="button" data-video="HvMTPFj68JU" data-title="Seleção 03" aria-label="Reproduzir Seleção 03">
+          <img src="https://img.youtube.com/vi/HvMTPFj68JU/hqdefault.jpg" alt="Capa da Seleção 03" loading="lazy" />
+          <span class="card-overlay"><strong>Seleção 03</strong><small>Reproduzir trailer</small></span>
+          <span class="play-icon">▶</span>
+        </button>
+        <button class="movie-card" type="button" data-video="K2I3V44XCOY" data-title="Seleção 04" aria-label="Reproduzir Seleção 04">
+          <img src="https://img.youtube.com/vi/K2I3V44XCOY/hqdefault.jpg" alt="Capa da Seleção 04" loading="lazy" />
+          <span class="card-overlay"><strong>Seleção 04</strong><small>Reproduzir trailer</small></span>
+          <span class="play-icon">▶</span>
+        </button>
+        <button class="movie-card" type="button" data-video="sx6EiX6lpBY" data-title="Seleção 05" aria-label="Reproduzir Seleção 05">
+          <img src="https://img.youtube.com/vi/sx6EiX6lpBY/hqdefault.jpg" alt="Capa da Seleção 05" loading="lazy" />
+          <span class="card-overlay"><strong>Seleção 05</strong><small>Reproduzir trailer</small></span>
+          <span class="play-icon">▶</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <div class="about-badge">2024 → 2026</div>
       <div>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/gt_fAE1Eg2Q?si=J2ufok8HE2ojgdGX"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+        <span class="section-kicker">Projeto preservado</span>
+        <h2>Um pedaço da minha evolução.</h2>
+        <p>Este site nasceu como trabalho escolar usando HTML e CSS. Em vez de apagar o projeto antigo, ele foi modernizado para continuar no GitHub como registro da evolução no desenvolvimento web.</p>
       </div>
+      <div class="tech-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsivo</span></div>
     </section>
-    <section class="Categoria">
-      <h2>Filmes e séries</h2>
-      <div class="Categoria-videos">
-        <a href="https://www.youtube.com/watch?v=2ono3WoPKDE">
-          <img src="https://img.youtube.com/vi/2ono3WoPKDE/maxresdefault.jpg" />
-        </a>
-        <a href="https://youtube.com/watch?v=Wnw8ooCpt2E">
-          <img src="https://img.youtube.com/vi/Wnw8ooCpt2E/maxresdefault.jpg" />
-        </a>
-        <a href="https://www.youtube.com/watch?v=HvMTPFj68JU">
-          <img src="https://img.youtube.com/vi/HvMTPFj68JU/maxresdefault.jpg" />
-        </a>
-        <a href="https://www.youtube.com/watch?v=K2I3V44XCOY">
-          <img src="https://img.youtube.com/vi/K2I3V44XCOY/maxresdefault.jpg" />
-        </a>
-        <a href="https://www.youtube.com/watch?v=sx6EiX6lpBY">
-          <img src="https://img.youtube.com/vi/sx6EiX6lpBY/maxresdefault.jpg" />
-        </a>
-      </div>
-    </section>
-  </body>
+  </main>
+
+  <footer>
+    <strong>LUKINHAS PLAY</strong>
+    <span>Projeto escolar • preservado e modernizado</span>
+  </footer>
+</body>
 </html>
